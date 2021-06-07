@@ -1,0 +1,112 @@
+Abstract Class vs Interface
+
+- Abstract classes and interfaces are used to achieve abstraction in Java-
+
+- We can not instantiate abstract classes and Interfaces
+
+	public abstract class Food(){}
+	public Interface Cookable{}
+	
+	Food food = new Food(); // ERROR
+	Cookable cookable = new Cookable(); // ERROR
+	
+- We use abstract classes for setting foundation for sub classes. 
+It is normally a general idea.
+
+- Interfaces are used to a feature to classes by providing abstract methods
+
+- Class can extends one class/abstract class
+- Class can implements multible interfaces
+
+public Interface Cookable{}
+public Interface Bakeable{}
+public abstract class Food{}
+
+public class Bread extends Food implements Cookable,Bakeable{}
+
+- Methods
+
+- Abstract classes can have abstract and non-abstract methods
+- Interfaces can have abstract,default and static methods.
+- Concrete class is responsible for providing implementation.
+
+public abstract class Food{
+
+public abstract void eat();
+public void serve(){}
+public static buy(){}
+
+}
+
+public Interface Cookable{
+
+public abstract void cook();
+void store();
+
+}
+
+public Interface Bakeable{
+
+public default void bakeInOven(){}
+
+public static void bake(String str){}
+
+}
+
+public class Bread extends Food implements Bakeable{
+@Override
+public void eat(){}
+
+}
+
+public class Patatoes extends Food implements Cookable,Bakeable{
+
+@Override
+public void eat(){}
+
+@Override
+public void cook(){}
+
+@Override
+void store(){}
+
+}
+
+
+- Variables
+
+- Abstract classes can have instance, static and final variables.
+- Interfaces can only have "public static final" variables
+
+public abstract class Food{
+
+String foodNAme;
+public static int foodPrice;
+public final boolean SPICY;
+
+}
+
+public Interface Bakeable{
+
+public static final String ACTION = "cook";
+
+
+}
+
+-Constructor
+
+-Abstract classes can have constructors.
+-Interfaces can not have constructors.
+
+-Access Modifiers
+
+- Abstract classes can use all access modifiers with variables and methods.
+- Interfaces can only use public access modifiers.
+
+-Inheritance
+
+- Abstract classes can extend a single abstract or non-abstract class and implement interfaces
+- Interfaces can extend multiple interfaces.
+- Interfaces support multiple Inheritance.
+- Interfaces can not extend classes.
+

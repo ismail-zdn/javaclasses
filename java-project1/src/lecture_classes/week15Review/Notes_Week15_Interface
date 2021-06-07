@@ -1,0 +1,104 @@
+What is an Interface?
+◦ The second way to achieve abstraction in java is via interface
+◦ An interface is not a class, but acts similar
+◦ An Interfaces also allow creation of abstract methods
+◦ The main purpose of an interface is providing additional information and
+behaviors to any class that needs it
+◦ To create an interface the keyword interface is used instead of class
+
+*****
+
+Interface continue
+
+◦ By default, any method created in an interface is < public abstract >
+◦ [Java 8] Only way to create non-abstract methods in an interface is to create
+a default or static method
+◦ Default methods: use keyword default before the return type of a method.
+This will allow a method to be created with implementation.
+// can have any implementation
+// acting like a instance
+◦ Static methods: use keyword static before the return type of the method. This
+will allow a method to be created with implementation.
+// belonging to interface
+// its not to going to overridden.
+// this is just a regular method
+
+*****
+
+Interface continue
+
+◦ By default, any variable created will be < static final > and must be initialized
+◦ To add an interface to a class, keyword implements is used after the class
+name
+◦ Inheritance allows only one parent class, but it is possible to implement multiple
+interfaces to a class
+◦ This is done by adding a comma after each interface after the class
+declaration. The class must implement all the abstract methods from all the
+interfaces
+◦ It’s possible to extend interfaces to other interfaces. And unlike regular
+inheritance interfaces can extend as many interfaces as they wish
+
+*****
+Interface continue
+
+◦ Is-A relationship: interface implementation is included.
+In this case: Student is a Person, Student is a Teachable, Student is a Dreamer
+[] Note: Here we inherit a Person class and implement Teachable and Dreamer
+interfaces
+
+*****
+Interfaces can have:
+
+-Constant variables (static final)
+-Abstract methods
+-Default Methods
+-Static Methods
+
+*****
+Interfaces can not have:
+
+-Constructor (they are not class)
+-Blocks
+-Instance variables or methods
+
+*****
+Abstract method recap
+
+◦ Abstract methods can only be defined in abstract classes or interfaces
+◦ Abstract methods can not be declared private or final
+◦ Abstract methods can not provide a method body/implementation in the
+abstract class or interface it is declared
+◦ Implementing an abstract method in a subclass follows the same rules for
+overriding a method
+
+*****
+More Abstraction questions:
+
+◦ Do abstract classes have a constructor?
+-> Yes, the class is still inheriting the Object class and has a default
+constructor
+◦ Can an abstract class have only non-abstract methods?
+-> Yes, an abstract class doesn’t need to have any abstract methods.
+◦ If the abstract class doesn’t have any abstract methods can you instantiate?
+-> No, objects of an abstract classes can never be made
+
+*****
+More Abstraction Questions:
+
+◦ Can you add instance or static variables into abstract class?
+-> Yes
+◦ Can you add initializer or static blocks into Abstract class?
+-> Yes
+◦ What access modifiers can abstract methods be?
+-> They can have any access modifier except private 
+
+*****
+More Abstraction Questions:
+
+◦ Can an abstract method be static?
+-> No, abstract methods are meant to overridden, and only the instance
+methods can be override
+◦ Can a method be abstract and final?
+-> No, we cannot have abstract final methods. Final methods cannot be
+overridden, and abstract methods must be implemented 
+

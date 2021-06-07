@@ -1,0 +1,43 @@
+What is Abstraction
+◦ A concept that focuses only on the feature / idea of something and
+not how it is done (implementation)
+◦ In java, abstraction is achieved via abstract class or interface
+◦ Abstraction cannot exist without inheritance
+
+*****
+
+What is an Abstract class?
+- Add keyword abstract before the class declaration
+- An abstract class cannot be instantiated – An object can never be created
+from that class
+- An abstract class allows creation of abstract methods, which are methods
+without any implementation. In other words, methods without a body. 
+- The class which inherits the abstract class is called the concrete class. The
+concrete class must implement all abstract methods declared from the
+abstract class
+- Variables act following regular inheritance rules
+
+****
+
+Extend an abstract class to another
+abstract class:
+
+◦ It’s possible for an abstract class to inherit another abstract class. In this
+case implementation of the abstract methods are not required 
+◦ In this case the sub abstract class is not a concrete class, but as soon as a
+concrete class inherits all the properties of that abstract class it must implement
+all abstract methods from all super classes
+
+*****
+
+Abstract Class Rules Recap
+
+◦ Abstract classes can not be instantiated (can not create as a object with new keyword)
+◦ Abstract classes may be defined with any number of abstract and non-abstract methods, 
+including none
+◦ Abstract classes can not be private or final
+◦ An abstract class that extends another abstract class inherits all its abstract
+methods as its own abstract methods
+◦ The first concrete class that extends an abstract class must provide an
+implementation for all the inherited abstract methods
+

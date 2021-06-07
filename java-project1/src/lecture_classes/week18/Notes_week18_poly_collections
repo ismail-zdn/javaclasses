@@ -1,0 +1,79 @@
+Why to use the polymorphic reference?
+List -> ArrayList
+- The flexibility given by polymorphism should be used to follow proper principles 
+    (SOLID principles of oop)
+- Polymorphism allows us to use the interface reference for our objects. This allows our code to be functional for a longer period of time. The interface sets the common ideas, but the implementation is coming from the object.
+- In methods:
+    making the return type and or parameter type of polymorphic reference instead a specific class and that allows the method to be more reusable. 
+    public List<String> method1(List<String> list) {
+    }
+--------------------------------------------------------------------------
+Stack: Class inherits the vector class, but it follows LIFO (last in first out)
+    - Testing example: User should see the more recently added item in the shopping cart at the top
+--------------------------------------------------------------------------
+Queue:
+    
+    - inheriting Collection interface
+    - usually FIFO (First in first out)
+        > The implementation could vary in the collection classes 
+    - This data structure also has additional features to insert, extract, loop up elements
+        [ add() == offer() ] [remove() == poll() ] [ element() == peek() ]
+        -> add() would throw exception on a failure, offer() return a value
+Class that implement Queue:
+    PriorityQueue: Stores elements in natural order. null is not a valid element
+    Deque: an interface with allowed elements to be used from the beginning or end
+        -> LinkedList
+    ArrayDeque: class that implements Deque. Usually works faster than ArrayList or Stack. null is not valid element 
+--------------------------------------------------------------------------
+Set 
+    - inherits the collection interface 
+    - This collection is unordered, meaning the order of the element is not maintained 
+    - This collection does not allow duplicate elements 
+Classes that implement Set interface:
+    HashSet: provides a fast and efficient way to find elements 
+    LinkedHashSet: data structure that is linked so the insertion order is maintained 
+    TreeSet: implements the SortedSet interface which extends the Set interface. The natural order is used to store the elements. Doesn't allow the null element
+- Given any String, remove any duplicate characters and sort them.  
+        String s = "vasdsasddaseesd";
+        Set<String> set = new TreeSet<>(Arrays.asList(s.split("")));
+        System.out.println(set.toString().replace(", ", "").replace("[","").replace("]",""));
+- Testing: categories in a menu can be converted from list to set to remove duplicates, if the size is the same between both then the function is working as intended 
+--------------------------------------------------------------------------
+Iterable interface -> extends to the collection 
+    -> If a data structure is implementing the Iterable interface you can use the for each loop
+- The iterator is an on object that can be used to manually iterate through a collection. This goes from one element to the next, until the end.
+    - Using the iterator object it's possible to remove elements from the collection
+    - If you try to remove elements in a collection while a for each loop is running:
+        ConcurrentModificationException
+--------------------------------------------------------------------------
+Map
+- The map interface does not implement collection interface
+    -> Maps are not apart of the collection framework
+    -> The maps cannot be directly used in a for each loop
+- a map is a data structure which works in a key/value format. Each key/value pair is called an entry
+    - Each key is linked to a single value. Map don't allow duplicates keys, but allow duplicate values
+Classes that implement the map interface:
+    HashMap: The order of entries is not guaranteed  
+    LinkedHashMap: extends HashMap. Insertion order is maintained 
+    TreeMap Implements the SortedMap interface. The data structure will order the keys in natural order. Cannot have null key
+--------------------------------------------------------------------------
+- Given a map of String, String modify and the map when:
+    -> If the key "a" and key "b" have values that are different length then create new entry with key "c" and the value as the biggest value between "a" and "b"
+    -> If the values of "a" and "b" have the same length, change both the values to be empty
+codingbat
+hackerrank
+leetcode
+- Create a method that will accept a String and be print how many times each characters is found in the String
+apple
+a - 1
+p - 2
+l - 1
+e - 1
+Testing for DB:
+    name: ___
+        null
+    list -> check all the people
+            -> data of each person is a map
+                -> firstname, lastname, etc -> keys
+        list.get(i) -> each map
+        list.get(i).get("firstname") != null

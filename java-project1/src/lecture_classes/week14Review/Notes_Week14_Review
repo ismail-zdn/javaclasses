@@ -1,0 +1,17 @@
+12/19/2020
+Practice: OOP Inheritance
+ScrumTask:
+    Person:
+        attributes: name, age, gender
+    Employee extends Person:
+        attributes: name, age, gender, hourlyRate, jobTitle, ID, isFullTime
+    Tester extends Employee:
+        attributes: name, age, gender, hourlyRate, jobTitle, isFullTime
+    Developer extends Employee:
+        attributes: name, age, gender, hourlyRate, jobTitle, isFullTime
+    ScrumTeam:
+        attributes:
+            BA, PO, SM (String)
+            ArrayList<Tester>
+            ArrayList<Developer>
+

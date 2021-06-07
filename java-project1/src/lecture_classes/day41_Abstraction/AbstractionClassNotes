@@ -1,0 +1,251 @@
+Abstraction Class Notes
+Abstraction: is concentrating on essential/important things and not worrying about details.
+
+			 is concentrating on name of the action/behavior , without thinking about implementation
+			 
+			 "organizing the code" "reusing the code" "less duplicate code"
+			 
+			 
+*****
+
+- An abstract class can not be instantiated
+	public abstract Animal{}
+- An abstract class can have abstract method and instance method. 
+	public abstract void eat(); // abstract method
+- If there is a abstract method in a class, this class have to be abstract class.
+
+*****
+
+• A sub class of abstract class is called concrete class
+• A first concrete class must implement all inherited abstract methods
+• The second subclass which is inheriting the concrete class, doesn't have to implement abstract methods.
+
+*****
+• A abstract class can inherit another abstract class 
+• An abstract class can extend another abstract class. If so it is optional to
+implement abstract methods from abstract super class.
+
+****
+
+Abstraction Class Notes
+
+
+Abstraction: is concentrating on essential/important things and not worrying about details.
+
+			 is concentrating on name of the action/behaviour , without thinking about implementation
+
+Abstraction can be done in 2 ways: Abstract classes, Interface 
+
+
+Abstraction helps with "organizing the code", "reusing the code", "less duplicate code",
+
+*****
+Can we instantiate abstract class?
+	- No we can not create object from abstract class
+
+	public abstract class Browser{}
+
+	Browser browser = new Browser(); //Error
+
+*****
+What is Abstract Method?
+	- is a method without body/implementation. Can be placed in abstract class or interface
+
+	public abstract class Browser{
+		public abstract void navigate(String url);
+		public abstract void displayWebpage();
+	}
+	
+*****
+Where do you add implementation? 
+
+	- Is added in first concrete class
+	- While adding implementation, all overriding rules should be followed.
+
+	public class NetScape extends Browser{
+		public void navigate(String URL){
+			//code
+			// implementation
+		}
+		public void displayWebpage(){
+			//code
+		}
+
+	}
+
+*****
+Can we add non-abstract method in abstract class?
+	- Yes we can. Abstract class can have both abstract method and non-abstract method
+
+	public abstract class Browser{
+		public abstract void navigate(String URL);
+		public abstract void displayWebpage();
+		public void close(){
+			//code
+		}
+	}
+
+*****
+Is it mandatory for abstract class to have abstract method?
+
+	- No it is not. Abstract class can have 0 abstract method.
+
+	public abstract class Browser{
+		public void close(){
+			//code
+		}
+	}
+
+*****
+Can we add constructor in abstract class?
+	- Yes we can. 
+
+	public abstract class Browser {
+	
+		public Browser() {
+			System.out.println("Creating a browser");
+		}
+	}
+
+*****
+If we can not instantiate abstract class, how we can call the constructor?
+	- The constructor of abstract class can be called from a subclass using super keyword.
+
+	public abstract class Browser {
+	
+		public Browser() {
+			System.out.println("Creating a browser");
+		}
+	}
+
+	public class NetScape extends Browser{
+
+		public NetScape(){
+			super();
+		}
+	}
+
+*****
+Can you add instance or static variables into abstract class?
+	- Yes we can have instance variables in abstract class
+
+		public abstract class Browser {
+
+		String name;
+		static int id;
+	
+		public Browser() {
+			System.out.println("Creating a browser");
+		}
+	}
+
+	- Variables can not be abstract
+		abstract int id; //Error
+
+*****
+Can you add instance or static init block?
+	- Yes we can 
+
+*****
+Can an abstract class extend another abstract class?
+	- Yes it can 
+
+	public abstract class A{}
+    public abstract class B extends A{}
+
+*****
+Can an abstract class extend another non-abstract class?
+	- Yes it can 
+
+	public class A{}
+    public abstract class B extends A{}
+
+*****
+Can a class extends multiple abstract classes?
+    - No it can not
+
+    public abstract class A{}
+    public abstract class B{}
+
+    public class C extends A,B{} //Error
+
+*****
+Can we add static method into abstract class?
+	- yes we can 
+
+	    public abstract class A{
+
+	    	public static void methodX(){
+
+	    	}
+	    }
+
+*****
+Can a method be abstract and final in abstract class?
+	- No it can not 
+
+	public abstract class Browser{
+		public abstract final void navigate(String url); //Error  // we need to override it.
+		public abstract void displayWebpage();
+	}
+
+*****
+Can abstract method be protected, private, and default?
+	- private: no
+	- default: yes 
+	- protected: yes
+
+When an abstract class extends another abstract class, does it require to override/implement abstract methods from parent?
+	- No it does not require
+	- First concrete sub class is required to implement all abstract methods
+
+public abstract class Phone{
+	public abstract void call(){}
+}
+
+public abstract class MobilePhone extends Phone{
+	public abstract void text();
+
+}
+
+public Nokia extends MobilePhone{
+	public void call(){
+		//code
+	}
+
+	public void text(){
+		//code
+	}
+}
+
+public Iphone extends MobilePhone{
+	public void call(){
+		//code
+	}
+
+	public void text(){
+		//code
+	}
+
+}
+
+public IphoneX extends Iphone{
+	//no required to override 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,72 @@
+Polymorphism
+• Polymorphism is the ability of the object to take on many forms
+• Polymorphism is when reference type is a parent class/interface and
+object type is child.
+
+ParentClass/Interface RN = ChildClass;
+
+Reference Type Object Type
+Animal a = new Animal();
+Animal a = new Dog();
+Animal a = new Bird();
+
+- only with extends and implements
+
+WebDriver driver = new ChromeDriver();  //WebDriver is a interface. 
+
+*****
+
+Calling method in polymorphism
+• When we call a method, it will call overridden version from a child class,
+if we have overridden the method.
+• If method is not overridden, it will call parent/super class version.
+
+*****
+
+• getClass() method helps us to access the object information
+• getClass().getName() : returns package.className of the object
+• getClass().getSimpleName() : returns just the class name of the object
+
+
+*****
+
+instanceof Operator
+
+• instanceof operator can be used to check if the object is certain class.
+
+Shape sh = new Circle();
+		
+		if (sh instanceof Triangle) {
+			System.out.println("Triangle");
+		}else if (sh instanceof Circle) {
+			System.out.println("Circle");
+		}else{
+			System.out.println("Square");			
+		}
+		
+*****
+Rules 
+
+• Reference type can be parent or interface , object can be any extending
+or implementing child class
+• Reference type decides what is accessible 
+
+*****
+Casting (down-casting) (Object Casting - Previous one Primitive Casting)
+• Instructs the compiler to change the existing type of an object reference
+to another type
+
+*****
+Casting
+
+1) Goat gt = (Goat) an; 
+	gt.eat("grass");
+
+
+2)((Goat) an).eat("grass");
+
+
+	
+((TakeScreenShot) driver).takeSchreenshot("image.png");
+
+
